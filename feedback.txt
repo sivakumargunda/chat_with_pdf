@@ -1,0 +1,3 @@
+Response: It was a pleasure talking to you. I wish you all the best in your future endeavors. If you have any further questions, please feel free to reach out to me. | Feedback: ok nice
+Response: The purpose of the project is to introduce a machine learning based approach using python to analyze and detect damage in concrete structures, specifically focusing on cracks. The goal is to provide real time insights that includes the dimensions of cracks such as length, width and their relative positions. | Feedback: nice
+Response: DR. N.T.R UNIVERSITY OF HEALTH SCIENCES | Feedback: 
