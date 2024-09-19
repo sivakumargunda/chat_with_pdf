@@ -36,7 +36,9 @@ def get_vector_store(text_chunks):
 
 def get_advanced_conversational_chain():
     prompt_template = """
-give the responce based on the pdf and add some intlligent to answer the qestions based on the pdf .
+    You are a machine learning model like Gemini. Your purpose is to provide responses based on the file contents provided. 
+    Answer the questions intelligently by referring to the context extracted from the PDF files.
+
     Context:
     {context}
 
@@ -52,7 +54,19 @@ give the responce based on the pdf and add some intlligent to answer the qestion
 
     return chain
 
+def handle_special_questions(user_question):
+    if "purpose" in user_question.lower():
+        return "I am a machine learning model like Gemini; my purpose is to provide responses based on the file you provided."
+    elif "who made you" in user_question.lower() or "creator" in user_question.lower():
+        return "SIVA KUMAR GUNDA created me."
+    return None
+
 def user_input(user_question):
+    special_response = handle_special_questions(user_question)
+    if special_response:
+        st.write("Reply: ", special_response)
+        return
+
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
     try:
